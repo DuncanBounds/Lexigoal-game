@@ -1,0 +1,19 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/margins" as *;
+@use "../abstracts/breakpointsMap" as *;
+
+.game__input {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  background-color: $color-neutral--light;
+  color: $color-neutral--dark;
+  font-size: 1.6rem;
+  padding: $margin-xs $margin-xs;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+
+  @include respond(phone) {
+    padding: $margin-sm $margin-sm;
+  }
+}

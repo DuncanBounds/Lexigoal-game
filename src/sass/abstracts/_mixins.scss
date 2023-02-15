@@ -1,0 +1,13 @@
+@mixin grid-display {
+  display: grid;
+  grid-template-columns:
+    [full-start] 1.6rem [center-start] repeat(10, [col-start] 1fr [col-end])
+    [center-end] 1.6rem [full-end];
+}
+
+@mixin flex-col-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

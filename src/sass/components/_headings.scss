@@ -1,0 +1,62 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpointsMap" as *;
+@use "../abstracts/margins" as *;
+
+.home__heading,
+.home__subheading,
+.rules__heading {
+  color: $color-neutral--dark;
+}
+
+.home__heading,
+.home__subheading {
+  text-align: center;
+}
+
+.home__heading {
+  font-size: 4.8rem;
+
+  @include respond(phone-sm) {
+    font-size: 7.2rem;
+    letter-spacing: 0.6rem;
+  }
+}
+
+.home__subheading,
+.rules__heading,
+.game__heading {
+  font-size: 2.8rem;
+  letter-spacing: 0.1rem;
+
+  @include respond(phone-sm) {
+    font-size: 3.6rem;
+    letter-spacing: 0.2rem;
+  }
+}
+
+.home__subheading {
+  margin-top: -$margin-md;
+}
+
+.game__heading {
+  text-align: center;
+}
+
+.game__subheading {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 2.4rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+
+  @include respond(phone) {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.footer__copyright {
+  font-size: 1.6rem;
+}

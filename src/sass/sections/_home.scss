@@ -1,0 +1,18 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/margins" as *;
+@use "../abstracts/mixins" as *;
+
+.home {
+  @include grid-display;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: $color-neutral--light;
+}
+
+.home__container {
+  grid-column: center-start / center-end;
+  @include flex-col-centered;
+  gap: $margin-md;
+  height: 100vh;
+}

@@ -1,0 +1,77 @@
+@use "../abstracts/margins" as *;
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpointsMap" as *;
+
+.popup__win--sm,
+.popup__lose--sm {
+  display: flex;
+  gap: $margin-sm;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 4.2rem;
+  left: 50%;
+  width: 20rem;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 0.8s ease-in-out;
+}
+
+.popup-sm-visible {
+  opacity: 1;
+
+  @include respond(phone) {
+    opacity: 0;
+  }
+}
+
+.popup__heading--win--sm,
+.popup__heading--lose--sm {
+  text-align: center;
+  color: $color-primary;
+  font-size: 2rem;
+}
+
+.popup__win,
+.popup__lose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $margin-md;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  display: none;
+  transition: all 0.8s ease-in-out;
+}
+
+.popup__win--left,
+.popup__lose--left {
+  left: 50%;
+  transform: translate(120%, -50%);
+}
+
+.popup__win--right,
+.popup__lose--right {
+  right: 50%;
+  transform: translate(-120%, -50%);
+}
+
+.popup-visible {
+  opacity: 0;
+  display: none;
+
+  @include respond(phone) {
+    opacity: 1;
+    display: inline-block;
+  }
+}
+
+.popup__heading--win,
+.popup__heading--lose {
+  font-size: 3.2rem;
+  color: $color-primary;
+  text-align: center;
+}

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/scrabble.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" defer src="index.js"></script>
+
+    <title>Lexigoal</title>
+  </head>
+  <body>
+    <main>
+      <!--*****************HOME SECTION**********************-->
+      <article class="home">
+        <div class="home__container">
+          <svg class="icon__logo">
+            <use href="img/logo-sprite.svg#scrabble"></use>
+          </svg>
+
+          <h1 class="home__heading">Lexigoal</h1>
+          <h2 class="home__subheading">1 word, 5 letters, 6 guesses!</h2>
+
+          <button class="btn btn__primary--lg" id="playNow">Play now!</button>
+          <button class="btn btn__secondary--lg" id="openRules">
+            Rules
+            <svg class="icon__rules">
+              <use xlink:href="img/rules-sprite.svg#document"></use>
+            </svg>
+          </button>
+          <aside class="footer">
+            <p class="footer__copyright">&copy; Duncan Bounds, 2022</p>
+          </aside>
+        </div>
+      </article>
+
+      <!--*****************RULES SECTION**********************-->
+      <article class="rules">
+        <div class="rules__container">
+          <button class="btn__close" id="closeRules">X</button>
+
+          <article class="rules__box">
+            <h1 class="rules__heading">Lexigoal rules:</h1>
+
+            <article class="rules__group">
+              <span class="rules__number">1</span>
+              <p class="rules__rule">
+                You have 6 attempts to guess a 5-letter word.
+              </p>
+            </article>
+
+            <article class="rules__group">
+              <span class="rules__number">2</span>
+              <p class="rules__rule">
+                Yellow background = letter is in the word but in a different
+                position.
+                <span class="rules__example rules__example--1">A</span>
+              </p>
+            </article>
+
+            <article class="rules__group">
+              <span class="rules__number">3</span>
+              <p class="rules__rule">
+                Green background = letter is in the word in the correct
+                position.
+                <span class="rules__example rules__example--2">A</span>
+              </p>
+            </article>
+
+            <article class="rules__group">
+              <span class="rules__number">4</span>
+              <p class="rules__rule">
+                Red background = letter is NOT in the word.
+                <span class="rules__example rules__example--3">A</span>
+              </p>
+            </article>
+          </article>
+        </div>
+      </article>
+
+      <!--*****************GAME SECTION**********************-->
+
+      <article class="game">
+        <article class="game__container">
+          <svg class="icon__rules--lg">
+            <use href="img/rules-sprite.svg#document"></use>
+          </svg>
+
+          <!--*****************HEADER**********************-->
+
+          <div class="game__header">
+            <h1 class="game__heading">Lexigoal</h1>
+            <h2 class="game__subheading">1 word, 5 letters, 6 guesses!</h2>
+
+            <!--*****************WIN LOSE REACTION SMALL SCREEN SIZE**********************-->
+
+            <article class="popup__win--sm">
+              <svg class="icon__win--sm">
+                <use use href="img/win-lose-sprite.svg#party-popper"></use>
+              </svg>
+              <h3 class="popup__heading--win--sm">You got it!</h3>
+              <svg class="icon__win--sm icon__right">
+                <use use href="img/win-lose-sprite.svg#party-popper"></use>
+              </svg>
+            </article>
+
+            <article class="popup__lose--sm">
+              <svg class="icon__lose--sm">
+                <use use href="img/win-lose-sprite.svg#sad"></use>
+              </svg>
+              <h3 class="popup__heading--lose--sm">Bad luck!</h3>
+              <svg class="icon__lose--sm">
+                <use use href="img/win-lose-sprite.svg#sad"></use>
+              </svg>
+            </article>
+          </div>
+
+          <!--*****************ROWS**********************-->
+          <div class="rows">
+            <article class="row">
+              <article class="letter">
+                <div class="row-1-front letter__front"></div>
+                <div class="row-1-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-1-front letter__front"></div>
+                <div class="row-1-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-1-front letter__front"></div>
+                <div class="row-1-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-1-front letter__front"></div>
+                <div class="row-1-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-1-front letter__front"></div>
+                <div class="row-1-back letter__back"></div>
+              </article>
+            </article>
+
+            <article class="row">
+              <article class="letter">
+                <div class="row-2-front letter__front"></div>
+                <div class="row-2-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-2-front letter__front"></div>
+                <div class="row-2-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-2-front letter__front"></div>
+                <div class="row-2-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-2-front letter__front"></div>
+                <div class="row-2-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-2-front letter__front"></div>
+                <div class="row-2-back letter__back"></div>
+              </article>
+            </article>
+
+            <article class="row">
+              <article class="letter">
+                <div class="row-3-front letter__front"></div>
+                <dbiv class="row-3-back letter__back"></dbiv>
+              </article>
+
+              <article class="letter">
+                <div class="row-3-front letter__front"></div>
+                <div class="row-3-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-3-front letter__front"></div>
+                <div class="row-3-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-3-front letter__front"></div>
+                <div class="row-3-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-3-front letter__front"></div>
+                <div class="row-3-back letter__back"></div>
+              </article>
+            </article>
+
+            <article class="row">
+              <article class="letter">
+                <div class="row-4-front letter__front"></div>
+                <div class="row-4-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-4-front letter__front"></div>
+                <div class="row-4-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-4-front letter__front"></div>
+                <div class="row-4-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-4-front letter__front"></div>
+                <div class="row-4-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-4-front letter__front"></div>
+                <div class="row-4-back letter__back"></div>
+              </article>
+            </article>
+
+            <article class="row">
+              <article class="letter">
+                <div class="row-5-front letter__front"></div>
+                <div class="row-5-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-5-front letter__front"></div>
+                <div class="row-5-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-5-front letter__front"></div>
+                <div class="row-5-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-5-front letter__front"></div>
+                <div class="row-5-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-5-front letter__front"></div>
+                <div class="row-5-back letter__back"></div>
+              </article>
+            </article>
+
+            <article class="row">
+              <article class="letter">
+                <div class="row-6-front letter__front"></div>
+                <div class="row-6-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-6-front letter__front"></div>
+                <div class="row-6-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-6-front letter__front"></div>
+                <div class="row-6-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-6-front letter__front"></div>
+                <div class="row-6-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="row-6-front letter__front"></div>
+                <div class="row-6-back letter__back"></div>
+              </article>
+            </article>
+
+            <!--*****************ANSWER**********************-->
+
+            <article class="row">
+              <article class="letter">
+                <div class="answer-front letter__front">?</div>
+                <div class="answer-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="answer-front letter__front">?</div>
+                <div class="answer-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="answer-front letter__front">?</div>
+                <div class="answer-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="answer-front letter__front">?</div>
+                <div class="answer-back letter__back"></div>
+              </article>
+
+              <article class="letter">
+                <div class="answer-front letter__front">?</div>
+                <div class="answer-back letter__back"></div>
+              </article>
+            </article>
+
+            <!--*****************POPUPS**********************-->
+
+            <article class="popup__win popup__win--left">
+              <svg class="icon__win">
+                <use href="img/win-lose-sprite.svg#party-popper"></use>
+              </svg>
+              <h3 class="popup__heading--win">You got it!</h3>
+            </article>
+
+            <article class="popup__win popup__win--right">
+              <svg class="icon__win icon__right">
+                <use href="img/win-lose-sprite.svg#party-popper"></use>
+              </svg>
+              <h3 class="popup__heading--win">You got it!</h3>
+            </article>
+
+            <article class="popup__lose popup__lose--left">
+              <svg class="icon__lose">
+                <use href="img/win-lose-sprite.svg#sad"></use>
+              </svg>
+              <h3 class="popup__heading--lose">Bad luck!</h3>
+            </article>
+
+            <article class="popup__lose popup__lose--right">
+              <svg class="icon__lose">
+                <use href="img/win-lose-sprite.svg#sad"></use>
+              </svg>
+              <h3 class="popup__heading--lose">Bad luck!</h3>
+            </article>
+          </div>
+
+          <!--*****************INPUT**********************-->
+
+          <input
+            type="text"
+            class="game__input"
+            placeholder="your guess (e.g, games)"
+            minlength="5"
+            maxlength="5"
+          />
+
+          <!--*****************BUTTONS**********************-->
+
+          <article class="game__btns">
+            <button class="btn btn__secondary--sm" id="playAgain">
+              Play again
+            </button>
+            <button class="btn btn__primary--sm" id="submitGuess">
+              guess now
+            </button>
+          </article>
+
+          <!--*****************ALPHABET **********************-->
+
+          <div class="alphabet">
+            <article class="alphabet-row">
+              <p class="alphabet-letter" data-letter="A">A</p>
+              <p class="alphabet-letter" data-letter="B">B</p>
+              <p class="alphabet-letter" data-letter="C">C</p>
+              <p class="alphabet-letter" data-letter="D">D</p>
+              <p class="alphabet-letter" data-letter="E">E</p>
+              <p class="alphabet-letter" data-letter="F">F</p>
+              <p class="alphabet-letter" data-letter="G">G</p>
+              <p class="alphabet-letter" data-letter="H">H</p>
+              <p class="alphabet-letter" data-letter="I">I</p>
+            </article>
+            <article class="alphabet-row">
+              <p class="alphabet-letter" data-letter="J">J</p>
+              <p class="alphabet-letter" data-letter="K">K</p>
+              <p class="alphabet-letter" data-letter="L">L</p>
+              <p class="alphabet-letter" data-letter="M">M</p>
+              <p class="alphabet-letter" data-letter="N">N</p>
+              <p class="alphabet-letter" data-letter="O">O</p>
+              <p class="alphabet-letter" data-letter="P">P</p>
+              <p class="alphabet-letter" data-letter="Q">Q</p>
+            </article>
+            <article class="alphabet-row">
+              <p class="alphabet-letter" data-letter="R">R</p>
+              <p class="alphabet-letter" data-letter="S">S</p>
+              <p class="alphabet-letter" data-letter="T">T</p>
+              <p class="alphabet-letter" data-letter="U">U</p>
+              <p class="alphabet-letter" data-letter="V">V</p>
+              <p class="alphabet-letter" data-letter="W">W</p>
+              <p class="alphabet-letter" data-letter="X">X</p>
+              <p class="alphabet-letter" data-letter="Y">Y</p>
+              <p class="alphabet-letter" data-letter="Z">Z</p>
+            </article>
+          </div>
+        </article>
+      </article>
+    </main>
+  </body>
+</html>

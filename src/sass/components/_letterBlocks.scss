@@ -1,0 +1,168 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/margins" as *;
+@use "../abstracts/breakpointsMap" as *;
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $margin-xs;
+  width: 100%;
+
+  @include respond(phone) {
+    gap: $margin-sm;
+  }
+}
+
+.row {
+  display: flex;
+  gap: $margin-xs;
+
+  @include respond(phone) {
+    gap: $margin-sm;
+  }
+}
+
+.letter {
+  height: 3.6rem;
+  width: 3.6rem;
+  position: relative;
+  perspective: 10rem;
+
+  @include respond(phone) {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.letter__front,
+.letter__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3.6rem;
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  border: 0.1rem solid $color-neutral--light;
+  border-radius: 0.4rem;
+  color: $color-neutral--dark;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.8s ease;
+
+  @include respond(phone) {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.letter--included {
+  background-color: $color-included;
+}
+
+.letter--correct {
+  background-color: $color-correct;
+}
+
+.letter--incorrect {
+  background-color: $color-incorrect;
+}
+
+.letter__front {
+  background-color: $color-neutral--dark;
+}
+
+.letter__back {
+  transform: rotateY(180deg);
+}
+
+.front--rotate {
+  transform: rotateY(-180deg);
+}
+
+.back--rotate {
+  transform: rotateY(0);
+}
+
+.answer-front {
+  background-color: $color-neutral--dark;
+  transition: all 0.8s ease;
+}
+
+.answer-back {
+  transform: rotateY(180deg);
+  transition: all 0.8s ease;
+}
+
+.answer-front--rotate {
+  transform: rotateY(-180deg);
+}
+
+.answer-back--rotate {
+  color: $color-neutral--dark;
+  background-color: $color-correct;
+  transform: rotateY(0);
+}
+
+//------------------------ALPHABET-----------------
+
+.alphabet {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $margin-xs;
+
+  @include respond(phone) {
+    gap: $margin-sm;
+  }
+}
+
+.alphabet-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $margin-xs;
+}
+
+.alphabet-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.6rem;
+  color: $color-neutral--light;
+  border-radius: 0.4rem;
+  border: 0.1rem solid $color-neutral--light;
+}
+
+.alphabet-included {
+  opacity: 0.5;
+  transform: scale(0.9);
+  background-color: $color-included;
+  color: $color-neutral--dark;
+}
+
+.alphabet-correct {
+  opacity: 0.5;
+  transform: scale(0.9);
+  background-color: $color-correct;
+  color: $color-neutral--dark;
+}
+
+.alphabet-incorrect {
+  opacity: 0.5;
+  transform: scale(0.9);
+  background-color: $color-incorrect;
+  color: $color-neutral--dark;
+}

@@ -1,0 +1,59 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpointsMap" as *;
+@use "../abstracts/margins" as *;
+
+.icon__logo {
+  height: 16rem;
+  width: 16rem;
+  fill: $color-primary;
+
+  @include respond(phone-sm) {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+.icon__rules {
+  height: 2.2rem;
+  width: 2.2rem;
+  fill: $color-neutral--light;
+}
+
+.icon__rules--lg {
+  align-self: flex-start;
+  height: 2.8rem;
+  width: 2.8rem;
+  fill: $color-primary;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    fill: $color-primary--light;
+    transform: translateY(-0.1rem) scale(1.01);
+  }
+
+  &:active {
+    fill: $color-primary--light;
+    transform: translateY(0.1rem) scale(0.99);
+  }
+}
+
+//ADD THE WIN/LOSE GAME ICONS
+
+.icon__win,
+.icon__lose {
+  height: 12rem;
+  width: 12rem;
+  fill: $color-primary;
+}
+
+.icon__win--sm,
+.icon__lose--sm {
+  height: 2.4rem;
+  width: 2.4rem;
+  fill: $color-primary;
+}
+
+.icon__right {
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,100 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpointsMap" as *;
+@use "../abstracts/margins" as *;
+@use "../abstracts/typography" as *;
+
+.game__btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $margin-sm;
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  font-family: $font-primary;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.2rem) scale(1.01);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0.1rem) scale(0.99);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn__primary--lg,
+.btn__primary--sm {
+  color: $color-neutral--dark;
+  background-color: $color-primary;
+}
+
+.btn__primary--lg:hover,
+.btn__primary--sm:hover {
+  background-color: $color-primary--light;
+}
+
+.btn__primary--lg,
+.btn__secondary--lg {
+  width: 20rem;
+  padding: $margin-sm $margin-lg;
+  font-size: 2rem;
+
+  @include respond(phone-sm) {
+    width: 24rem;
+    font-size: 2.8rem;
+  }
+}
+
+.btn__secondary--lg {
+  background-color: $color-neutral--dark;
+  color: $color-neutral--light;
+
+  &:hover {
+    background-color: $color-neutral--xdark;
+  }
+}
+
+.btn__secondary--sm {
+  color: $color-neutral--dark;
+  background-color: $color-neutral--light;
+}
+
+.btn__primary--sm,
+.btn__secondary--sm {
+  width: 50%;
+  padding: $margin-sm $margin-md;
+  font-size: 1.6rem;
+}
+
+.btn__close {
+  align-self: flex-end;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  background-color: $color-neutral--dark;
+  font-size: 2.4rem;
+  color: $color-neutral--light;
+  transition: all 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-neutral--xdark;
+    transform: translateY(-0.2rem) scale(1.01);
+  }
+
+  &:active {
+    background-color: $color-neutral--xdark;
+    transform: translateY(0.2rem) scale(0.99);
+  }
+}

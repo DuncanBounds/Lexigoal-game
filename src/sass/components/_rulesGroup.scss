@@ -1,0 +1,75 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/breakpointsMap" as *;
+@use "../abstracts/margins" as *;
+
+.rules__group {
+  background-color: $color-neutral--light;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: $margin-xs;
+  padding: $margin-xs;
+
+  @include respond(phone-sm) {
+    gap: $margin-sm;
+    padding: $margin-sm;
+  }
+}
+
+.rules__rule {
+  flex: 0 1 85%;
+  font-size: 1.6rem;
+  color: $color-neutral--dark;
+  display: flex;
+  align-items: center;
+  gap: $margin-xs;
+
+  @include respond(phone-sm) {
+    gap: $margin-sm;
+  }
+}
+
+.rules__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: 5%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.6rem;
+  color: $color-neutral--dark;
+  background-color: $color-primary;
+  border-radius: 50%;
+
+  @include respond(phone-sm) {
+    height: 3.2rem;
+    width: 3.2rem;
+    font-size: 1.8rem;
+  }
+}
+
+.rules__example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-neutral--dark;
+  background-color: $color-included;
+  border: 0.1rem solid $color-neutral--dark;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.4rem;
+
+  @include respond(phone-sm) {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  &--2 {
+    background-color: $color-correct;
+  }
+
+  &--3 {
+    background-color: $color-incorrect;
+  }
+}

@@ -1,0 +1,51 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/margins" as *;
+@use "../abstracts/breakpointsMap" as *;
+@use "../abstracts/mixins" as *;
+
+.rules {
+  @include grid-display;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  padding: $margin-sm $margin-sm;
+  background-image: linear-gradient(
+    to bottom left,
+    rgba($color-primary, 1),
+    rgba($color-primary--light, 1)
+  );
+  transform: translateY(700%);
+  transition: all 0.4s ease-in-out;
+
+  &--active {
+    bottom: 0;
+    height: 100vh;
+    transform: translateY(0);
+  }
+}
+
+.rules__container {
+  grid-column: center-start / center-end;
+  @include flex-col-centered;
+
+  @include respond(phone) {
+    grid-column: col-start 3 / col-end 8;
+  }
+
+  @include respond(tab-port) {
+  }
+
+  @include respond(tab-land) {
+    grid-column: col-start 4 / col-end 7;
+  }
+}
+
+.rules__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $margin-sm;
+  width: 100%;
+}
